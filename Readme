@@ -1,0 +1,60 @@
+# ******************************************************************************
+# PRE-REQUIREMENT:
+# ******************************************************************************
+
+1. Install chardet 3rd party package before running the scripts
+   > jumbo install python-pip
+   > pip install chardet
+
+
+# ******************************************************************************
+# HIERARCHY:
+# ******************************************************************************
+
+
+|-- conf                        # Config file
+|   |-- urls
+|   `-- spider.conf
+|-- spider.py                   # MiniSpider parent class
+|-- mini_spider.py              
+|-- test                        # Unit test
+|   |-- log
+|   |   |-- test.log
+|   |   `-- test.log.wf
+|   |-- conf
+|   |   |-- spider.conf
+|   |   `-- urls
+|   |-- test_log.py
+|   |-- test_util.py
+|   |-- run.py                  # Unit test startup script
+|   |-- test_crawl_url.py
+|   `-- test_spider.py
+|-- crawl_url.py                # Crawl URL module
+|-- output                      # Crawling result
+|-- log                         # All info will log into these two files
+|   |-- mini_spider.log
+|   `-- mini_spider.log.wf
+|-- html_parser.py              # HTML parser module
+|-- Readme
+|-- util.py                     # Util module
+`-- log.py                      # Log module
+
+# ******************************************************************************
+# DEMO:
+# ******************************************************************************
+
+1. Run program
+
+1) To run mini spider, run below cmd and check the result under ./output, the 
+   log will be in log/mini_spider.log
+
+> python mini_spider.py -c conf/spider.conf
+
+
+2. Run unit test
+
+1) To run unit regression testsuite, run below cmd and the test result will be printed
+   on screen.
+
+> cd ./test/
+> python run.py
